@@ -10,7 +10,7 @@ const Form = ({ addUserData }) => {
 
   const handleInputChange = (e) => {
     setFormData((prevData) => {
-      return { ...prevData, [e.target.value]: e.target.value }
+      return { ...prevData, [e.target.name]: e.target.value };
     });
   };
 
@@ -24,12 +24,12 @@ const Form = ({ addUserData }) => {
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
       </label>
+      <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
       <label>
         Email:
-        <input type="text" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
+      <input type="text" name="email" value={formData.email} onChange={handleInputChange} />
       <button type="submit">Submit</button>
     </form>
   );
